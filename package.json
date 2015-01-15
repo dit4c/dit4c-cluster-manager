@@ -1,0 +1,11 @@
+{
+  "name": "etcd-couchdb-replication-manager",
+  "description": "Monitors etcd to discover CouchDB servers and set up a pull-replicated cluster",
+  "dependencies": {
+    "nano": "^6.0.2",
+    "node-etcd": "^3.0.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
