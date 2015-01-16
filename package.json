@@ -1,11 +1,15 @@
 {
-  "name": "etcd-couchdb-replication-manager",
-  "description": "Monitors etcd to discover CouchDB servers and set up a pull-replicated cluster",
+  "name": "dit4c-cluster-manager",
+  "description": "Manages DIT4C service discovery to manage the cluster",
   "dependencies": {
+    "coffee-script": "^1.8.0",
+    "etcd-live-collection": "^0.1.2",
+    "etcdjs": "^2.0.1",
+    "foreman": "^1.2.1",
     "nano": "^6.0.2",
-    "node-etcd": "^3.0.2"
+    "underscore": "^1.7.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node_modules/.bin/nf start"
   }
 }
