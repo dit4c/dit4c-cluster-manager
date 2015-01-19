@@ -22,7 +22,7 @@ updateHipache = () ->
   console.log("Known servers: ")
   for name, addr of servers
     console.log(name+" → "+addr)
-  record = [ domain ].concat(["http://"+addr+":9000" for name, addr of servers])
+  record = [ domain ].concat("http://"+addr+":9000" for name, addr of servers)
   etcd.set("/dit4c/hipache/frontend:"+domain, JSON.stringify(record))
   etcd.get "/dit4c/hipache/frontend:"+domain, (err, data) ->
     if (!err)
