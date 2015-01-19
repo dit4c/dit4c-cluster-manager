@@ -26,6 +26,7 @@ replicationId = (db, otherServerName) ->
 replicationDoc = (db, otherServerAddr) ->
   "source":  "http://"+otherServerAddr+":5984/"+db
   "target":  db
+  "continuous": true
   "create_target":  true
   "user_ctx": { "roles": ["_admin"] }
 
