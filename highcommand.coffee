@@ -27,11 +27,12 @@ restartMonitoring = do () ->
     alive: {}
   writeHipacheRecord = () ->
     key = "/dit4c/hipache/frontend:"+domain
-    record = [ domain ].concat(ip for ip, isUp of data.alive when isUp)
+    servers = (ip for ip, isUp of data.alive when isUp)
+    record = [ domain ].concat("http://"+ip+":9000" for ip in servers)
     etcd.set key, JSON.stringify(record), (err) ->
       if (!err)
         # Log success
-        console.log "Servers now: "+record.slice(1).join(', ')
+        console.log "Servers now: "+servers.join(', ')
       else
         # Retry write
         setTimeout(writeHipacheRecord, 5000)
