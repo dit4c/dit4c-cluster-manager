@@ -6,6 +6,7 @@
     "etcd-live-collection": "^0.1.2",
     "etcdjs": "^2.0.1",
     "foreman": "^1.2.1",
+    "http-monitor": "^0.3.5",
     "nano": "^6.0.2",
     "underscore": "^1.7.0"
   },
